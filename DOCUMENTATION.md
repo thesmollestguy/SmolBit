@@ -36,7 +36,7 @@ Format: `[Instruction][Dest Register][Src Register]` (e.g., `+01` adds reg 1 to 
 * `=` : Assignment (Set Dest = Src).
 * `^` : Exponentiation.
 * `v` : Root.
-* `#` : Set Register to Immediate Byte. Format: `# [Reg] [Hex1] [Hex2]` (Reads next 2 hex chars as an 8-bit value).
+* `#` : Set Register to Immediate Byte. Format: `# [Reg] [Hex1][Hex2]` (Reads next 2 hex chars as an 8-bit value).
 
 ### Display & I/O
 * `| [Reg]` : Display register as Binary.
@@ -51,7 +51,7 @@ Format: `[Instruction][Dest Register][Src Register]` (e.g., `+01` adds reg 1 to 
 ---
 
 ## 3. Control Flow (Blocks)
-All blocks must be closed with the `]` character.
+All blocks must be closed with the `]` character. For readability, you may add `[` at the start of a block and it will not affect compilation.
 
 ### Comparisons (`%cond`)
 Used in `?` (If) and `W` (While) blocks:
