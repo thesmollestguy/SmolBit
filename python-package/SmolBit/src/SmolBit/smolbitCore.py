@@ -63,13 +63,13 @@ class VM:
     # Display
     # ---------------------------------------------------------
     def display(self, value, mode):
-        if mode == 0:   # binary
-            print(format(value, '08b'))
+        if mode == 0:   # utf-8 char
+            print(chr(value), end='')
         elif mode == 1:  # decimal
             print(value)
         elif mode == 2:  # hex
             print(hex(value)[2:].upper())
-        elif mode == 3:  # utf-8 char
+        elif mode == 3:  # utf-8 char (immediate)
             print(chr(value), end="")
 
     # ---------------------------------------------------------
@@ -231,9 +231,9 @@ class VM:
                 elif(blk_type == "101"):
                     mode = bs.read(1)
                     if(mode == "0"):
-                        blk_type += mode + bs.read(8)
-                    else:
                         blk_type += mode + bs.read(12)
+                    else:
+                        blk_type += mode + bs.read(8)
                 chunk += blk_type
                 depth += 1
             elif op == "110":
@@ -286,10 +286,10 @@ class VM:
                 self.run(BitStream(body_bits))
 
         # ---------------------------------------------------------
-        # 001 REPEAT %intg … 110
+        # 001 REPEAT %addr … 110
         # ---------------------------------------------------------
         elif blk_type == 1:
-            count = self.read_int(bs.read(4))
+            count = self.get(self.read_int(bs.read(4)))
             body_bits = self.collect_block(bs)
             for _ in range(count):
                 self.run(BitStream(body_bits))

@@ -29,10 +29,10 @@ codes = {
     'v': "011111",  # root
 
     # ----- Display (100 addr dpmd) -----
-    '|': "10000",  # display binary
+    'p': "10000",  # display utf8
     '%': "10001",  # display decimal
     'h': "10010",  # display hex
-    'u': "10011",  # display utf8
+    'P': "10011",  # display utf8 (immediate)
 
     # ----- Block instructions (101 blok) -----
     '?': "101000",  # IF
