@@ -45,6 +45,8 @@ class VM:
         # function table {id: bitstring}
         self.functions = {}
 
+        self.stack = []
+
     # ---------------------------------------------------------
     # Helpers
     # ---------------------------------------------------------
@@ -349,7 +351,12 @@ class VM:
         # 111 UNASIGNED
         # ---------------------------------------------------------
         elif blk_type == 7:
-            None
+            mode = bs.read(1)
+            addr = bs.read(4)
+            if(mode == "0"):
+                self.stack.append(self.get(addr))
+            elif(mode == "1"):
+                self.set(addr, self.stack.pop())
 
 
 # =============================================================
