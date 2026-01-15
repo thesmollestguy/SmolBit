@@ -28,7 +28,7 @@ EX.
 
 # Installation
 
-1. Install the VSIX file
+1. Download the VSIX file
 2. Open VSCode
 3. Press Ctrl+Shift+X (or open the Extensions sidebar tab)
 4. Press Views and More Actions (the three dots in the corner of the Extensions window)
