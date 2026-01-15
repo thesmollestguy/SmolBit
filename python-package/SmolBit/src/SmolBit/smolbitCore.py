@@ -234,6 +234,8 @@ class VM:
                         blk_type += mode + bs.read(12)
                     else:
                         blk_type += mode + bs.read(8)
+                elif(blk_type == "001"):
+                    blk_type+=bs.read(4)
                 chunk += blk_type
                 depth += 1
             elif op == "110":
