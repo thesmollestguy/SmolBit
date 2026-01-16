@@ -162,7 +162,7 @@ class checker():
             elif(operation == "U"):
                 n = self.expect(("num",1))
                 print(f"FUNCUNDEF func{n}")
-            elif(operation == "S"):
+            elif(operation == "J"):
                 n = self.expect(("num",1))
                 print(f"FUNCCALL func{n}")
             elif(operation == "L"):
@@ -200,5 +200,21 @@ class checker():
                 print("PAGE 6")
             elif(operation == "&"):
                 print("PAGE 7")
+            elif(operation == "s"):
+                n = self.expect(("num", 1))
+                print(f"PUSH reg{n}")
+            elif(operation == "S"):
+                n = self.expect(("num", 1))
+                print(f"POP to reg{n}")
+            elif(operation == "D"):
+                n=self.expect(("num",1))
+                print(f"INPUT to reg{n} (dec)")
+            elif(operation == "H"):
+                n=self.expect(("num",1))
+                print(f"INPUT to reg{n} (hex)")
+            elif(operation == "E"):
+                print(f"EXIT (error)")
+            elif(operation == "x"):
+                print(f"EXIT (no error)")
         if(self.blockdepth>0):
             print(f"Unclosed block found, possibly a {self.blockslist.pop()}")
