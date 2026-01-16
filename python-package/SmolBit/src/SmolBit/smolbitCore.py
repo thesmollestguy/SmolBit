@@ -102,7 +102,8 @@ class VM:
         elif mode == 1: v = (v - 1) & 0xFF
         elif mode == 2: v = 0
         elif mode == 3: v = addr  # init value = address index
-        elif mode == 4: v = v ; a=1
+        elif mode == 4: v = v; self.stack.append(v)
+        elif mode == 5: v = self.stack.pop()
         self.set(addr, v)
 
     # ---------------------------------------------------------
