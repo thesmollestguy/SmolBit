@@ -292,12 +292,14 @@ class checker():
                 n=self.expect(("num",1))
                 if printB:
                     print(f"INPUT to reg{n} (hex)")
-            elif(operation == "EXE"):
+            elif(operation == "ERR"):
                 if printB:
                     print(f"EXIT (error)")
             elif(operation == "EXO"):
                 if printB:
                     print(f"EXIT (no error)")
+            elif(operation == "DPM"):
+                print(f"{colorama.Fore.YELLOW}The {colorama.Fore.BLUE}DPM{colorama.Fore.YELLOW} command should never be used when manually writing code, as it is intended for compiler use only. Please use {colorama.Fore.BLUE}DPI{colorama.Fore.YELLOW} instead.")
         if(self.blockdepth>0):
             if printB:
                     print(f"Unclosed block found, possibly a {self.blockslist.pop()}")

@@ -55,7 +55,7 @@ codes_3 = {
 
     # ----- IO (111 iocd) -----
     'EXO': "11100",   # exit ok
-    'EXE': "11101",   # exit error
+    'ERR': "11101",   # exit error
     'INH': "11110",   # await hex → next nibble = addr
     'IND': "11111",   # await decimal → next nibble = addr
 
@@ -165,7 +165,7 @@ def splitCode(bitcode:str):
     return split
 
 def convert(bitcode:str, file:str=False):
-    bitcode = splitCode(bitcode.replace("[", "").replace("(", "").replace(")", ""))
+    bitcode = splitCode(bitcode.replace("[", "").replace("(", "").replace(")", "").replace("{", "").replace("}", ""))
     
     bits = ""
     for i, ch in enumerate(bitcode):

@@ -44,7 +44,7 @@ Format: `[Instruction][Dest Register][Src Register]` (e.g., `ADD 1 0` adds reg 1
 * `DPH [Reg]` : Display register as Hex.
 * `DPI [Byte]` : Display byte as UTF-8 character. (Also `DPI "[Text]"` for longer strings)
 * `EXO` : Exit program (Success).
-* `EXE` : Exit program (Error).
+* `ERR` : Exit program (Error).
 * `INH [Reg]` : Await Hex input from user and store in register.
 * `IND [Reg]` : Await Decimal input from user and store in register.
 
@@ -77,4 +77,4 @@ Used in `IF` (If) and `WHL` (While) blocks:
 ## 4. Syntax & Comments
 * **Comments**: Anything between semicolons is ignored (e.g., `; comment ;`).
 * **Literals**: Hexadecimal characters `0-f` are used for register addresses and immediate counts.
-* **Formatting**: Brackets `(` and `)` can be used for visual organization but are stripped during conversion.
+* **Formatting**: Brackets `(` and `)` can be used for visual organization but are stripped before compilation. `[`, `{`, and `}` will also be stripped before compilation.
