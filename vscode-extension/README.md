@@ -3,14 +3,16 @@
 You can change the colors of the syntax highlighting by changing the `"editor.tokenColorCustomizations": {"textMateRules": ...}` section of your settings.json file.
 The scopes for the language are as follows:
 Comments: comment.smolbit
-Hex values: constants.numeric.smolbit
-Registers/Addresses: support.variable.smolbit
-The `f` register: support.variable.global.smolbit
-Errors: invalid.illegal.smolbit
-Comparison Operators: keyword.operator.comparison.smolbit
-Control (Functions, If statements, loops, etc.): keyword.control.smolbit
-Page Switches: storage.type.smolbit
-Function identifiers: entity.name.function.smolbit
+Strings: string.smolbit
+Block instructions: keyword.control.smolbit
+Function IDs: entity.name.function.smolbit
+Math functions: keyword.operator.smolbit
+Comparison operators: keyword.operator.comparison.smolbit
+Hex values: constant.numeric.smolbit
+Registers: support.variable.smolbit
+Specifically the `f` register: support.variable.global.smolbit
+Page changes: storage.type.smolbit
+General functions: support.function.smolbit
 
 EX.
 ```json
